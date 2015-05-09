@@ -9,12 +9,6 @@ from math import pi
 
 
 @command.register
-def paradoja(bot, event, *args):
-    """Los [ro]bots no soportan las paradojas\n Uso: <bot> Este enunciado es mentira [frase]"""
-    text = _('No pienses en ello, no pienses en ello, no pienses en ello')
-    yield from event.conv.send_message(text_to_segments(text))
-
-@command.register
 def amame(bot, event, *args):
     """El bot manda amor de bot, ¿las maquinas sienten no?\n Sintaxis: bot amame"""
     text = _('te mando amor')
@@ -34,7 +28,7 @@ def dime(bot, event, *args):
 
 @command.register
 def dile(bot, event, *args):
-    """Regresa una frase despues de 'dile'\n Uso: <bot> dime [frase]"""
+    """Regresa una frase despues de 'dile'\n Uso: <bot> dile [frase]"""
     text = ' '.join(args)
     yield from event.conv.send_message(text_to_segments(text))
 
@@ -196,6 +190,26 @@ def traduce(bot, event, fuente, obj , *args):
     yield from event.conv.send_message(text_to_segments(text))
 
 ### Funciones de manuel ###
+
+@command.register
+def paradoja(bot, event, *args):
+    """Los [ro]bots no soportan las paradojas\n Uso: <bot> Este enunciado es mentira [frase]"""
+    text = _('No pienses en ello, no pienses en ello, no pienses en ello')
+    yield from event.conv.send_message(text_to_segments(text))
+
+@command.register
+def fuera(bot, event, *args):
+    """El bot hiso algo que no debe y ahora debe retirarse"""
+    text = _('Pe... pe.. pero por que!? 😦')
+    yield from event.conv.send_message(text_to_segments(text))
+
+@command.register
+def reglas(bot, event, *args):
+    """Las tres leyes de la robótica son un conjunto de normas escritas por Isaac Asimov"""
+    text = _('1.- Un robot no hará daño a un ser humano o, por inacción, permitir que un ser humano sufra daño.\n' 
+    '2.- Un robot debe obedecer las órdenes dadas por los seres humanos, excepto si estas órdenes entrasen en conflicto con la 1ª Ley.\n'
+    '3.-Un robot debe proteger su propia existencia en la medida en que esta protección no entre en conflicto con la 1ª o la 2ª Ley.' )
+    yield from event.conv.send_message(text_to_segments(text))
 
 @command.register
 def explosions(bot, event, *args):
