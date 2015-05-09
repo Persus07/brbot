@@ -7,13 +7,6 @@ from random import randint
 from math import sqrt
 from math import pi
 
-
-@command.register
-def amame(bot, event, *args):
-    """El bot manda amor de bot, ¿las maquinas sienten no?\n Sintaxis: bot amame"""
-    text = _('te mando amor')
-    yield from event.conv.send_message(text_to_segments(text))
-
 @command.register
 def saluda(bot, event, *args):
     """Saluda a la persona. \nUso: bot saluda [Persona]"""
@@ -189,7 +182,15 @@ def traduce(bot, event, fuente, obj , *args):
     text = _('\'{}\' en Google Translate: '+'\n {}').format(nombre,link)
     yield from event.conv.send_message(text_to_segments(text))
 
-### Funciones de manuel ###
+### Funciones de Hunter ###
+
+@command.register
+def amame(bot, event, *args):
+    """El bot manda amor de bot, ¿las maquinas sienten no?\n Sintaxis: bot amame"""
+    text = _('te mando amor')
+    yield from event.conv.send_message(text_to_segments(text))
+
+### Funciones de Manuel ###
 
 @command.register
 def paradoja(bot, event, *args):
